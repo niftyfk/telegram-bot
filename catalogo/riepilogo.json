@@ -1,0 +1,96 @@
+{
+  "unique_products": 6694,
+  "entries": 8642,
+  "sheets": [
+    {
+      "sheet": "🔥Trending Now 🔥",
+      "candidates": 745,
+      "valid": 745,
+      "new_unique": 745,
+      "missing_ninjabuy": 0,
+      "invalid_photo": 0,
+      "invalid_price": 0,
+      "invalid_kakobuy": 0
+    },
+    {
+      "sheet": "🐼 Update ⛄",
+      "candidates": 1430,
+      "valid": 1430,
+      "new_unique": 1390,
+      "missing_ninjabuy": 0,
+      "invalid_photo": 0,
+      "invalid_price": 0,
+      "invalid_kakobuy": 0
+    },
+    {
+      "sheet": "👞SHOES👞",
+      "candidates": 524,
+      "valid": 524,
+      "new_unique": 347,
+      "missing_ninjabuy": 0,
+      "invalid_photo": 0,
+      "invalid_price": 0,
+      "invalid_kakobuy": 0
+    },
+    {
+      "sheet": "🧥Coats and Jackets🧥",
+      "candidates": 305,
+      "valid": 305,
+      "new_unique": 70,
+      "missing_ninjabuy": 0,
+      "invalid_photo": 0,
+      "invalid_price": 0,
+      "invalid_kakobuy": 0
+    },
+    {
+      "sheet": "🥼Hoodies and Pants👖",
+      "candidates": 882,
+      "valid": 882,
+      "new_unique": 505,
+      "missing_ninjabuy": 0,
+      "invalid_photo": 0,
+      "invalid_price": 0,
+      "invalid_kakobuy": 0
+    },
+    {
+      "sheet": "👕T-shirt and shorts🩳",
+      "candidates": 1926,
+      "valid": 1926,
+      "new_unique": 1624,
+      "missing_ninjabuy": 0,
+      "invalid_photo": 0,
+      "invalid_price": 0,
+      "invalid_kakobuy": 0
+    },
+    {
+      "sheet": "👜 Accessories👜",
+      "candidates": 573,
+      "valid": 573,
+      "new_unique": 413,
+      "missing_ninjabuy": 0,
+      "invalid_photo": 0,
+      "invalid_price": 0,
+      "invalid_kakobuy": 0
+    },
+    {
+      "sheet": "🎧Electronic products🎧",
+      "candidates": 317,
+      "valid": 317,
+      "new_unique": 202,
+      "missing_ninjabuy": 0,
+      "invalid_photo": 0,
+      "invalid_price": 0,
+      "invalid_kakobuy": 0
+    },
+    {
+      "sheet": "👠 Womens Spreadsheet 👗",
+      "candidates": 1940,
+      "valid": 1940,
+      "new_unique": 1398,
+      "missing_ninjabuy": 0,
+      "invalid_photo": 0,
+      "invalid_price": 0,
+      "invalid_kakobuy": 0
+    }
+  ]
+}
