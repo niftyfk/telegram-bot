@@ -62,15 +62,18 @@ class BotTests(unittest.TestCase):
 
     def test_social_footer_and_safe_html(self):
         config = dict(self.config, haul_url="https://youtube.com/@niftyfk?si=NWKIVs70L5EDq0B8",
-                      shorts_url="", register_url="https://ikako.vip/r/beqp5")
+                      shorts_url="", register_url="https://ikako.vip/r/beqp5",
+                      register_label="🎉 Register Here + 135$ 🎉", footer="")
         text = bot.caption(self.products[0], config)
         self.assertIn("My social:", text)
-        self.assertIn("Haul</a>", text)
+        self.assertIn("🎥 Haul on YT</a>", text)
         self.assertIn("Register Here", text)
         self.assertIn("https://ikako.vip/r/beqp5", text)
         self.assertIn("Felpa &amp; cappuccio", text)
         self.assertNotIn("Shorts", text)
-        self.assertNotIn("135", text)
+        self.assertIn("Register Here + 135$", text)
+        self.assertIn("📝 BEST SPREADSHEET 📝", text)
+        self.assertNotIn("Prezzi indicativi", text)
 
     def test_audit_tracks_all_candidates(self):
         audit = []
