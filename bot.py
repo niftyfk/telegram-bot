@@ -236,14 +236,15 @@ def caption(product, config):
             raise RuntimeError("URL non valido nella configurazione del messaggio.")
         return f'<a href="{html.escape(url, quote=True)}">{html.escape(label)}</a>'
     spreadsheet = f"https://docs.google.com/spreadsheets/d/{config.get('spreadsheet_id', '')}/edit"
-    lines = [anchor(spreadsheet, "📑 BEST SPREADSHEET 📑"),
+    lines = [anchor(spreadsheet, "📝 BEST SPREADSHEET 📝"),
              "🔎 Article: " + html.escape(product['title'][:220]),
              "💵 " + html.escape(product['price']),
              anchor(product['link'], "🔗 KakoBuy Link"),
-             anchor(product['ninjabuy_link'], "🔗 NinjaBuy Link"),
-             "", html.escape(config['footer'][:160])]
+             anchor(product['ninjabuy_link'], "🔗 NinjaBuy Link")]
+    if config.get('footer'):
+        lines.extend(["", html.escape(config['footer'][:160])])
     social = []
-    for key, label in (("haul_url", "▶️ Haul"), ("shorts_url", "🎵 Shorts")):
+    for key, label in (("haul_url", "🎥 Haul on YT"), ("shorts_url", "🎵 Shorts")):
         if config.get(key):
             social.append(anchor(config[key], label))
     if social:
