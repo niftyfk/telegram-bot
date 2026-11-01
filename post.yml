@@ -1,0 +1,56 @@
+name: KakoBuy Telegram
+
+on:
+  schedule:
+    - cron: '17 11,17 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'preview = anteprima; check = permessi; publish = invia davvero'
+        required: true
+        default: preview
+        type: choice
+        options:
+          - preview
+          - check
+          - publish
+
+permissions:
+  contents: write
+
+concurrency:
+  group: telegram-publisher
+  cancel-in-progress: false
+
+jobs:
+  post:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test automatici
+        run: python -m unittest discover -s tests -v
+      - name: Identità per il registro degli invii
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Leggi e pubblica
+        env:
+          MODE: ${{ github.event_name == 'schedule' && 'publish' || inputs.mode }}
+          ENABLED: ${{ vars.POSTING_ENABLED }}
+        run: |
+          if [ "$MODE" = "publish" ] && [ "$ENABLED" != "true" ]; then
+            echo 'Invio disattivato: imposta la variabile POSTING_ENABLED a true dopo i test.'
+            exit 0
+          fi
+          python bot.py --mode "$MODE" --persist-git
