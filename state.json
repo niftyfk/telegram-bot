@@ -98,9 +98,10 @@
       "message_id": 42
     },
     "15b2e8ae09a563c166e09412e0fb75e2ac8673ce210309f61b697b1c3f73588b": {
-      "status": "pending",
+      "status": "sent",
       "source": "\ud83d\udd25Trending Now \ud83d\udd25!B23",
-      "at": "2026-11-09T17:59:36.403543+00:00"
+      "at": "2026-11-09T17:59:36.403543+00:00",
+      "message_id": 43
     }
   }
 }
